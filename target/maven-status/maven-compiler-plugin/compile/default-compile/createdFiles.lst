@@ -1,0 +1,13 @@
+com\mysandbox\mvnspringhibernatesb\config\MyWebMvcConfig.class
+com\mysandbox\mvnspringhibernatesb\entity\model\SandboxUser.class
+com\mysandbox\mvnspringhibernatesb\config\MyConfig.class
+com\mysandbox\mvnspringhibernatesb\dao\BaseDAO.class
+com\mysandbox\mvnspringhibernatesb\dao\impl\SandboxUserDAOImpl.class
+com\mysandbox\mvnspringhibernatesb\service\SandboxUserService.class
+com\mysandbox\mvnspringhibernatesb\controller\MyController.class
+com\mysandbox\mvnspringhibernatesb\dao\impl\BaseDAOImpl.class
+com\mysandbox\mvnspringhibernatesb\init\MyInitializer.class
+com\mysandbox\mvnspringhibernatesb\service\impl\SandboxUserServiceImpl.class
+com\mysandbox\mvnspringhibernatesb\dao\SandboxUserDAO.class
+com\mysandbox\mvnspringhibernatesb\service\BaseService.class
+com\mysandbox\mvnspringhibernatesb\service\impl\BaseServiceImpl.class
