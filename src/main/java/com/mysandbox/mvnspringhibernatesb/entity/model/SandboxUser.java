@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -13,7 +14,11 @@ import javax.persistence.Table;
 public class SandboxUser implements Serializable{
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="SANDBOX_USER_SEQ")
+    @SequenceGenerator(
+            name="SANDBOX_USER_SEQ",
+            sequenceName="SANDBOX_USER_SEQ"
+    )
     @Column(name="USER_ID")
     private Long userId;
     

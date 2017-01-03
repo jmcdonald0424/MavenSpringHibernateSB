@@ -42,6 +42,11 @@ public abstract class BaseDAOImpl <T, PK extends Serializable> implements BaseDA
         getCurrentSession().delete(entity);
     }
     
+    @Override
+    public void deleteById(PK id){
+        getCurrentSession().delete(find(id));
+    }
+    
     protected Session getCurrentSession(){
         return sessionFactory.getCurrentSession();
     }

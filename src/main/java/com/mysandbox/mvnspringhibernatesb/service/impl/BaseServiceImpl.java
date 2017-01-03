@@ -35,5 +35,11 @@ public abstract class BaseServiceImpl<T, PK extends Serializable> implements Bas
     @Transactional
     public void delete(T entity) {
         baseDAO.delete(entity);
-    }     
+    }   
+    
+    @Override
+    @Transactional
+    public void deleteById(PK id){
+        baseDAO.deleteById(id);
+    }
 }
