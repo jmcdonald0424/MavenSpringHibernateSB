@@ -9,5 +9,7 @@ com\mysandbox\mvnspringhibernatesb\dao\impl\BaseDAOImpl.class
 com\mysandbox\mvnspringhibernatesb\init\MyInitializer.class
 com\mysandbox\mvnspringhibernatesb\service\impl\SandboxUserServiceImpl.class
 com\mysandbox\mvnspringhibernatesb\dao\SandboxUserDAO.class
+com\mysandbox\mvnspringhibernatesb\exception\SandboxUserNotFoundException.class
+com\mysandbox\mvnspringhibernatesb\exception\handler\RestExceptionHandler.class
 com\mysandbox\mvnspringhibernatesb\service\BaseService.class
 com\mysandbox\mvnspringhibernatesb\service\impl\BaseServiceImpl.class

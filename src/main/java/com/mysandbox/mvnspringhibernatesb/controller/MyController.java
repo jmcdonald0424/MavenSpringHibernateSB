@@ -3,6 +3,7 @@ package com.mysandbox.mvnspringhibernatesb.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mysandbox.mvnspringhibernatesb.entity.model.SandboxUser;
+import com.mysandbox.mvnspringhibernatesb.exception.SandboxUserNotFoundException;
 import com.mysandbox.mvnspringhibernatesb.service.SandboxUserService;
 import java.util.ArrayList;
 import java.util.List;
@@ -39,7 +40,7 @@ public class MyController{
     // Remote access methods
     @CrossOrigin
     @ResponseBody
-    @RequestMapping(value = "/result", method = RequestMethod.GET, produces = "application/json", headers = "content-type=application/json")
+    @RequestMapping(value = "/result", method = RequestMethod.GET, produces = "application/json;charset=UTF-8", headers = "content-type=application/json;charset=UTF-8")
     public String getSandboxUsers(){
         LOGGER.debug("Getting Sandbox Users...");
         List<SandboxUser> list = sandboxUserService.getSandboxUsers();
@@ -49,7 +50,17 @@ public class MyController{
     
     @CrossOrigin
     @ResponseBody
-    @RequestMapping(value = "/result", method = RequestMethod.POST, produces = "application/json", headers = "content-type=application/json")
+    @RequestMapping(value = "/result/{id}", method = RequestMethod.GET, produces = "application/json;charset=UTF-8", headers = "content-type=application/json;charset=UTF-8")
+    public String getSandboxUser(@PathVariable("id") Long id) throws SandboxUserNotFoundException{
+        LOGGER.debug("Getting Sandbox User: " + id);
+        SandboxUser sandboxUser = sandboxUserService.find(id);
+        LOGGER.debug("Sandbox User retrieved: " + sandboxUser.getUsername());
+        return buildJsonString(sandboxUser);
+    }
+    
+    @CrossOrigin
+    @ResponseBody
+    @RequestMapping(value = "/result", method = RequestMethod.POST, produces = "application/json;charset=UTF-8", headers = "content-type=application/json;charset=UTF-8")
     public String addSandboxUser(@RequestBody String username){	
     	SandboxUser user = new SandboxUser();
         Long userId = 0L;
